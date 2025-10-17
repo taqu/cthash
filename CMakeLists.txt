@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.50)
+cmake_minimum_required(VERSION 3.31)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug" "Release")
 
@@ -40,14 +40,13 @@ if(MSVC)
     target_link_libraries(${PROJECT_NAME})
 
 elseif(UNIX)
-    set(DEFAULT_CXX_FLAGS "-Wall -O0 -g -DCPPHTTPLIB_OPENSSL_SUPPORT -DCPPHTTPLIB_ZLIB_SUPPORT -std=c++20 -std=gnu++20 -march=native")
+    set(DEFAULT_CXX_FLAGS "-Wall -O0 -g -DCPPHTTPLIB_OPENSSL_SUPPORT -DCPPHTTPLIB_ZLIB_SUPPORT -march=native")
     set(CMAKE_CXX_FLAGS "${DEFAULT_CXX_FLAGS}")
     target_link_libraries(${PROJECT_NAME})
 elseif(APPLE)
 endif()
 
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 23)
 set_target_properties(${PROJECT_NAME}
     PROPERTIES
         OUTPUT_NAME_DEBUG "${PROJECT_NAME}" OUTPUT_NAME_RELEASE "${PROJECT_NAME}"

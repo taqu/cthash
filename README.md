@@ -1,6 +1,6 @@
-﻿# About
+# About
 Compile-time hash function and encryption. This library provides a way to compute hash values and perform encryption at compile time using C++ templates and constexpr functions.
-Now only supports SHA256 hash function and ChaCha20 encryption.
+Now only supports SHA256, BLAKE3 hash function and ChaCha20 encryption.
 
 # Usage
 To use this library, include the header file and call the desired functions. Here are some examples,
